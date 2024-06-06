@@ -31,3 +31,14 @@ btnThema.forEach(i => {
         sessionStorage.setItem("thema", HTML.dataset.thema);
     });
 });
+
+// FAQ
+const btnAccordion = document.querySelectorAll(".btn_accordion");
+const contentAccordion = document.querySelectorAll(".panel");
+const icnAccordion = document.querySelectorAll(".icon_wrap_accordion");
+for (let i = 0; i < btnAccordion.length; i++) {
+    btnAccordion[i].addEventListener("click", function () {
+        icnAccordion[i].classList.toggle("active");
+        contentAccordion[i].classList.toggle("active");
+    });
+}
