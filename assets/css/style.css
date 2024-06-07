@@ -314,9 +314,10 @@ table {
     right: 0;
 }
 /* Main Start */
-.main_menu {
+.main {
     width: 100%;
     margin-block-start: 2.8rem;
+    overflow-x: hidden;
 }
 /* Main_Header */
 .main_menu {
@@ -357,7 +358,6 @@ table {
     margin-block-end: 2rem;
     font-size: var(--fs-title-e);
 }
-
 .btn_main_menu {
     padding: 0.2rem 1.8rem;
     background-color: var(--primary-hover);
@@ -576,7 +576,6 @@ table {
     width: 100%;
     margin-top: 0.6rem;
 }
-
 .contact_form label input,
 .contact_form label textarea {
     width: 100%;
@@ -607,7 +606,6 @@ table {
     margin-top: 1rem;
 }
 .sosmed_contact .sosmed_link {
-    width: 90%;
     display: block;
     margin-top: 0.4rem;
     background-color: var(--background);
@@ -632,7 +630,6 @@ table {
 }
 .address_contact,
 .email_contact {
-    width: 90%;
     background-color: var(--background);
     border: 0.2px solid var(--input-outline-hover);
     padding: 0.8rem 1rem;
@@ -679,7 +676,7 @@ textarea {
 .right_footer {
     margin-inline-start: 2rem;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     gap: 2.4rem;
 }
 .footer_about,
@@ -716,11 +713,296 @@ textarea {
 /** 
 *** Media Query Responsive
 */
-@media (max-width: 320px) {
+@media (max-width: 540px) {
+    body {
+        background-color: red;
+    }
+    /* Contact */
+    .contact .container {
+        width: 98%;
+        padding: 1rem !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.4rem;
+    }
+    .contact_form {
+        width: 100%;
+        margin-top: 0.6rem;
+    }
+    .contact_form label,
+    .contact_form label {
+        font-size: calc(var(--fs-title-e) - 4px) !important;
+    }
+    .contact_form label input,
+    .contact_form label textarea {
+        width: 100% !important;
+        font-size: calc(var(--fs-title-e) - 4px) !important;
+    }
+    .contact_form label textarea {
+        height: 100px;
+    }
+    .heading_contact_left,
+    .heading_contact_right {
+        font-size: calc(var(--fs-title-d) - 2px);
+    }
+    .sosmed_contact {
+        width: 100%;
+        margin-top: 1rem;
+    }
+    .sosmed_contact .sosmed_link {
+        width: 100% !important;
+        font-size: calc(var(--fs-title-e) - 4px);
+        padding: 0.6rem 1rem !important;
+    }
+    .btn_contact {
+        font-size: var(--fs-title-e);
+    }
+    .address_contact,
+    .email_contact {
+        width: 100% !important;
+    }
+    .address_contact .address_heading,
+    .email_contact .email_heading {
+        font-size: calc(var(--fs-title-e) - 2px) !important;
+    }
+    .address,
+    .email {
+        font-size: calc(var(--fs-title-e) - 4px) !important;
+    }
+}
+@media (max-width: 475px) {
+    .top-bar .container {
+        width: 96% !important;
+    }
+    /* Main_Header */
+    .main_menu {
+        width: 100%;
+    }
+    .main_menu .container {
+        width: 98%;
+    }
+    .heading_main {
+        font-size: var(--fs-title-b) !important;
+        line-height: 1.1;
+    }
+    .label_main {
+        margin-block-start: 0.4rem;
+        margin-block-end: 1rem;
+        font-size: calc(var(--fs-title-e) - 4px) !important;
+    }
+    .btn_main_menu {
+        padding: 0.4rem 2rem !important;
+        font-size: calc(var(--fs-title-e) - 2px) !important;
+    }
+    .image_main_menu {
+        width: 100%;
+        max-width: 350px;
+        margin-left: 1.1rem;
+    }
+    .bgc-main {
+        top: 15%;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 30% 5% 10% 20%;
+    }
+    /* About */
+    .about .container {
+        width: 98% !important;
+    }
+    .image_about {
+        max-width: 320px !important;
+        margin-right: 20rem !important;
+    }
+    .bgc-right {
+        width: 70%;
+    }
+    .heading_about {
+        font-size: var(--fs-title-b) !important;
+        margin-block-end: 0.4rem !important;
+    }
+    .label_about {
+        font-size: calc(var(--fs-title-e) - 4px);
+        margin-block-end: 1rem !important;
+    }
+    .btn_about {
+        font-size: calc(var(--fs-title-e) - 2px) !important;
+        padding: 0.4rem 0.8rem !important;
+        border-radius: 0.2rem !important;
+    }
+    /* Properti */
+    .properti {
+        padding-block-start: 4rem !important;
+    }
+    .properti > .heading,
+    .faq > .heading {
+        font-size: calc(var(--fs-title-c) - 6px) !important;
+    }
+    .image-properti {
+        height: 180px !important;
+    }
+    .properti .container {
+        width: 98% !important;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 0.4rem !important;
+    }
+    .box-items {
+        padding-block-end: 0.6rem !important;
+    }
+    .box-content {
+        line-height: 1.4 !important;
+    }
+    .box-content .heading {
+        font-size: calc(var(--fs-title-c) - 5px);
+    }
+    .location_properti,
+    .type_properti {
+        font-size: calc(var(--fs-title-e) - 6px);
+    }
+    .price_properti {
+        font-size: calc(var(--fs-title-d) - 4px);
+    }
+    .btn_properti .btn {
+        font-size: calc(var(--fs-title-e) - 4px);
+    }
+    /* FAQ */
+    .faq {
+        padding-top: 4rem !important;
+    }
+    .faq .container {
+        width: 98% !important;
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        gap: 0;
+    }
+    .panel {
+        padding: 0.5rem;
+        font-size: calc(var(--fs-title-e) - 5px);
+    }
+    .btn_accordion {
+        padding: 0.8rem !important;
+        font-size: calc(var(--fs-title-e) - 2px) !important;
+    }
+    /* Contact */
+    .contact .container {
+        width: 98%;
+        padding: 1rem !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.4rem;
+    }
+    .contact_form {
+        width: 100%;
+        margin-top: 0.6rem;
+    }
+    .contact_form label,
+    .contact_form label {
+        font-size: calc(var(--fs-title-e) - 4px) !important;
+    }
+    .contact_form label input,
+    .contact_form label textarea {
+        width: 100% !important;
+        font-size: calc(var(--fs-title-e) - 4px) !important;
+    }
+    .contact_form label textarea {
+        height: 100px;
+    }
+    .heading_contact_left,
+    .heading_contact_right {
+        font-size: calc(var(--fs-title-d) - 2px);
+    }
+    .sosmed_contact {
+        width: 100%;
+        margin-top: 1rem;
+    }
+    .sosmed_contact .sosmed_link {
+        width: 100% !important;
+        font-size: calc(var(--fs-title-e) - 4px);
+        padding: 0.6rem 1rem !important;
+    }
+    .btn_contact {
+        font-size: var(--fs-title-e);
+    }
+    .address_contact,
+    .email_contact {
+        width: 100% !important;
+    }
+    .address_contact .address_heading,
+    .email_contact .email_heading {
+        font-size: calc(var(--fs-title-e) - 2px) !important;
+    }
+    .address,
+    .email {
+        font-size: calc(var(--fs-title-e) - 4px) !important;
+    }
+    /* Footer Start */
+    .footer .container {
+        width: 98% !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+    }
+    .left_footer {
+        width: 100%;
+        padding: 0 0.8rem;
+    }
+    .left_footer .text_footer {
+        font-size: calc(var(--fs-title-e) - 4px) !important;
+    }
+    .right_footer {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+    }
+    .footer_about,
+    .footer_quick,
+    .footer_contact {
+        font-size: calc(var(--fs-title-e) - 4px) !important;
+    }
+    .link_footer {
+        display: block;
+        font-size: calc(var(--fs-title-e) - 6px) !important;
+    }
+    .copyright_footer .copyright {
+        font-size: calc(var(--fs-title-e) - 8px) !important;
+    }
+    /* Footer End */
 }
 @media (max-width: 640px) {
+    /* Contact */
+    .contact .container {
+        width: 98%;
+        padding: 1rem 0.6rem;
+        gap: 1.8rem;
+    }
+
+    .contact_form label input,
+    .contact_form label textarea {
+        width: 90%;
+        max-width: 640px;
+    }
+    .sosmed_contact .sosmed_link {
+        width: 90%;
+        max-width: 640px;
+    }
+    .address_contact,
+    .email_contact {
+        width: 90%;
+        max-width: 640px;
+    }
+    .properti > .heading,
+    .faq > .heading {
+        font-size: var(--fs-title-b);
+    }
 }
 @media (max-width: 768px) {
+    /* Navbar */
     .nav-menu {
         width: 100%;
         height: 100vh;
@@ -734,7 +1016,6 @@ textarea {
         z-index: 11;
         transition: var(--transition-medium);
     }
-
     .nav_list {
         flex-direction: column;
         justify-content: center;
@@ -778,5 +1059,82 @@ textarea {
     }
     .fitur-hiden {
         display: flex;
+    }
+
+    /* Header Main */
+    .main {
+        margin-block-start: 0;
+        margin: 0;
+        overflow-x: hidden;
+    }
+    .main_menu .container {
+        width: 96%;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .main_menu .container .right {
+        margin-block-end: 1rem;
+    }
+    .bgc-main {
+        height: 80%;
+        border-radius: 50% 50% 0 50%;
+    }
+    .heading_main {
+        font-size: var(--fs-title-s);
+        line-height: 1.1;
+    }
+    .label_main {
+        margin-block-start: 0.6rem;
+        margin-block-end: 0.8rem;
+        font-size: var(--fs-title-e);
+    }
+    .btn_main_menu {
+        display: block;
+        width: max-content;
+        padding: 0.8rem 2.2rem;
+        font-size: var(--fs-title-d);
+    }
+    /* About */
+    .about {
+        padding-block-start: 6rem;
+        padding-block-end: 2rem;
+    }
+    .about .container {
+        gap: 1.2rem;
+    }
+    .heading_about {
+        margin-block-end: 0.4rem;
+    }
+    .label_about {
+        margin-block-end: 1.5rem;
+    }
+    .btn_about {
+        padding: 0.8rem 2rem;
+        border-radius: 0.4rem;
+    }
+    /* FAQ */
+    .faq .container {
+        gap: 0;
+    }
+    /* Contact */
+    .contact .container {
+        padding: 2rem;
+        gap: 1.8rem;
+    }
+    .right_contact {
+        padding-inline-start: 0;
+    }
+    .left_contact {
+        padding-inline-start: 0;
+    }
+
+    /* Footer */
+    .footer .container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
     }
 }
