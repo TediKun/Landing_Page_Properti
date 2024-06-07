@@ -714,9 +714,6 @@ textarea {
 *** Media Query Responsive
 */
 @media (max-width: 540px) {
-    body {
-        background-color: red;
-    }
     /* Contact */
     .contact .container {
         width: 98%;
