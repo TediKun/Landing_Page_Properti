@@ -136,7 +136,10 @@ ROOT CSS
 /* >>>>>>>
 Reset CSS
 <<<<<<<<<< */
-
+::selection {
+    background-color: var(--primary);
+    color: var(--background);
+}
 *,
 *::before,
 *::after {
@@ -153,6 +156,11 @@ body {
     -webkit-font-smoothing: antialiased;
     font-family: var(--font-primary);
     overflow-x: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+body::-webkit-scrollbar {
+    display: none;
 }
 
 a {
@@ -228,6 +236,20 @@ table {
     width: 92%;
     margin-inline: auto;
 }
+.top-bar.sticky {
+    transform: translateY(0);
+    backdrop-filter: blur(2px);
+    background-color: rgba(0, 0, 0, 0.236);
+    animation: transX 0.5s linear;
+}
+@keyframes transX {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
 /**
 **** Style Css
 */
@@ -237,6 +259,7 @@ table {
     top: 0;
     left: 0;
     z-index: 10;
+    transition: var(--transition-medium);
 }
 .top-bar .container {
     height: var(--header-height);
@@ -309,9 +332,11 @@ table {
     padding-inline: 0.2rem;
     border-radius: 0.2rem;
 }
-
 .nav-menu.active {
     right: 0;
+}
+.nav-menu.active::-webkit-scrollbar {
+    display: none;
 }
 /* Main Start */
 .main {
@@ -442,7 +467,7 @@ table {
 }
 .properti > .heading,
 .faq > .heading {
-    font-size: var(--fs-title-a);
+    font-size: calc(var(--fs-title-b) - 5px);
     font-weight: var(--weight-bolder);
     text-align: center;
     padding-block-end: 1.5rem;
@@ -669,7 +694,7 @@ textarea {
     width: 100%;
 }
 .left_footer .text_footer {
-    font-size: var(--fs-title-e);
+    font-size: calc(var(--fs-title-e) - 2px);
     font-weight: var(--weight-regular);
     padding-top: 0.2rem;
 }
@@ -714,6 +739,10 @@ textarea {
 *** Media Query Responsive
 */
 @media (max-width: 540px) {
+    .top-bar .container {
+        width: 96% !important;
+        margin-inline: auto;
+    }
     /* Contact */
     .contact .container {
         width: 98%;
@@ -772,7 +801,9 @@ textarea {
 @media (max-width: 475px) {
     .top-bar .container {
         width: 96% !important;
+        margin-inline: auto;
     }
+
     /* Main_Header */
     .main_menu {
         width: 100%;
@@ -814,14 +845,14 @@ textarea {
         margin-right: 20rem !important;
     }
     .bgc-right {
-        width: 70%;
+        width: 100%;
     }
     .heading_about {
         font-size: var(--fs-title-b) !important;
         margin-block-end: 0.4rem !important;
     }
     .label_about {
-        font-size: calc(var(--fs-title-e) - 4px);
+        font-size: calc(var(--fs-title-e) - 6px);
         margin-block-end: 1rem !important;
     }
     .btn_about {
@@ -964,7 +995,7 @@ textarea {
     }
     .link_footer {
         display: block;
-        font-size: calc(var(--fs-title-e) - 6px) !important;
+        font-size: calc(var(--fs-title-e) - 8px) !important;
     }
     .copyright_footer .copyright {
         font-size: calc(var(--fs-title-e) - 8px) !important;
@@ -972,6 +1003,10 @@ textarea {
     /* Footer End */
 }
 @media (max-width: 640px) {
+    .top-bar .container {
+        width: 94% !important;
+        margin-inline: auto;
+    }
     /* Contact */
     .contact .container {
         width: 98%;
@@ -1049,10 +1084,10 @@ textarea {
         display: block;
         font-size: var(--fs-title-b);
     }
-    .nav_feature {
+    .nav_feature.nc_nav {
         position: absolute;
         top: 1rem;
-        right: 1.5rem;
+        right: 0.4rem;
     }
     .fitur-hiden {
         display: flex;

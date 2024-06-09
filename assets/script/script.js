@@ -2,6 +2,8 @@
 const btnNavbar = document.querySelector("[data-btn-navbar]");
 const navMenu = document.querySelector("[data-nav-menu]");
 const btnCloseNav = document.querySelector("[data-btn-closenav]");
+const navLink = document.querySelectorAll(".nav_link");
+
 btnNavbar.addEventListener("click", function () {
     navMenu.classList.toggle("active");
 });
@@ -13,7 +15,15 @@ window.addEventListener("click", e => {
         navMenu.classList.remove("active");
     }
 });
-
+navLink.forEach(function (val, i) {
+    navLink[i].addEventListener("click", () => {
+        navMenu.classList.remove("active");
+    });
+});
+window.addEventListener("scroll", function () {
+    const topBar = document.querySelector(".top-bar");
+    topBar.classList.toggle("sticky", window.scrollY > 0);
+});
 // Thema
 const btnThema = document.querySelectorAll("[data-btn-thema]");
 const HTML = document.documentElement;
